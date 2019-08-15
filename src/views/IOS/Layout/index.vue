@@ -32,4 +32,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.ios {
+  display: flex;
+}
 </style>
