@@ -4,7 +4,7 @@
       <template v-for="route in routes">
         <li class="nav-item" :key="route.name" @click.stop="switchRoute(route.name)">
           <icon-svg :icon-name="index === route.name ? route.meta.iconActive : route.meta.icon"/>
-          <span class="nav-item-name">{{index === route.name ? route.meta.iconActive : route.meta.icon}}</span>
+          <span class="nav-item-name">{{route.name}}</span>
         </li>
       </template>
     </ul>
@@ -33,10 +33,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import '~@/assets/scss/variable';
 .navbar {
   display: flex;
   text-align: center;
-  font-size: 0.24rem;
+  font-size: $font-size-medium;
   &-nav {
     display: flex;
     width: 1.8rem;
@@ -46,7 +47,7 @@ export default {
   .nav-item {
     display: flex;
     cursor: pointer;
-    color: #fbfaf8;
+    color: $color-text;
     flex-direction: column;
     align-items: center;
     &-icon {

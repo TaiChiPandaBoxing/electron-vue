@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <header-top :url="url">INSTRUCTOR OPERATING STATION</header-top>
+    <header-top :show-back="$route.meta.showBack" :url="url">INSTRUCTOR OPERATING STATION</header-top>
     <router-view/>
   </div>
 </template>
@@ -17,15 +17,15 @@ export default {
     }
   },
   created () {
-    this.$indexDB.addData([
-      {
-        id: 1,
-        username: 'root',
-        password: '123456'
-      }
-    ], () => {
-      console.log('添加用户成功')
-    })
+    // this.$indexDB.addData([
+    //   {
+    //     id: 1,
+    //     username: 'root',
+    //     password: '123456'
+    //   }
+    // ], () => {
+    //   console.log('添加用户成功')
+    // })
   },
   watch: {
     $route: {

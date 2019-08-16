@@ -6,6 +6,7 @@ export default [
     meta: {
       icon: 'plane-line',
       iconActive: 'plane-fill',
+      showBack: false,
       keepAlive: true
     }
   },
@@ -16,6 +17,7 @@ export default [
     meta: {
       icon: 'pin-distance-line',
       iconActive: 'pin-distance-fill',
+      showBack: false,
       keepAlive: true
     }
   },
@@ -26,6 +28,7 @@ export default [
     meta: {
       icon: 'sun-cloudy-line',
       iconActive: 'sun-cloudy-fill',
+      showBack: false,
       keepAlive: true
     }
   },
@@ -36,6 +39,7 @@ export default [
     meta: {
       icon: 'broadcast-line',
       iconActive: 'broadcast-fill',
+      showBack: false,
       keepAlive: true
     }
   },
@@ -46,6 +50,7 @@ export default [
     meta: {
       icon: 'spam-2-line',
       iconActive: 'spam-2-fill',
+      showBack: false,
       keepAlive: true
     }
   },
@@ -56,6 +61,7 @@ export default [
     meta: {
       icon: 'route-line',
       iconActive: 'route-fill',
+      showBack: false,
       keepAlive: true
     }
   },
@@ -66,6 +72,7 @@ export default [
     meta: {
       icon: 'restart-line',
       iconActive: 'restart-fill',
+      showBack: false,
       keepAlive: true
     }
   },
@@ -76,6 +83,7 @@ export default [
     meta: {
       icon: 'computer-line',
       iconActive: 'computer-fill',
+      showBack: false,
       keepAlive: true
     }
   },

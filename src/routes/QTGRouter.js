@@ -4,6 +4,7 @@ export default [
     name: 'test',
     component: () => import(/* webpackChunkName: "test" */ '../views/QTG/Test'),
     meta: {
+      showBack: true,
       keepAlive: true
     }
   },
@@ -12,6 +13,7 @@ export default [
     name: 'entry',
     component: () => import(/* webpackChunkName: "entry" */ '../views/QTG/Entry'),
     meta: {
+      showBack: true,
       keepAlive: true
     }
   },
@@ -20,6 +22,7 @@ export default [
     name: 'detail',
     component: () => import(/* webpackChunkName: "detail" */ '../views/QTG/Detail'),
     meta: {
+      showBack: true,
       keepAlive: true
     }
   },

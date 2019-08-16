@@ -1,8 +1,8 @@
 <template>
   <div class="header">
     <div class="header-container">
-      <div class="header-back" @click="goBack">
-        <icon-svg icon-name="computer-line"/>
+      <div class="header-back">
+        <icon-svg v-if="showBack" icon-name="arrow-left-s-line" @click.native="goBack"/>
       </div>
       <h1 class="header-title">
         <slot/>
@@ -23,6 +23,10 @@ export default {
     url: {
       type: String,
       default: '/'
+    },
+    showBack: {
+      type: Boolean,
+      default: false
     }
   },
   data () {
@@ -63,41 +67,35 @@ export default {
   &-container {
     display: flex;
     width: 100%;
-    height: 34px;
-    justify-content: center;
+    padding: 2px 0;
     align-items: center;
-    font-size: 0.24rem;
-    background-color: #111212;
+    justify-content: space-between;
+    font-size: $font-size-medium;
+    background-color: $color-header-background;
   }
   &-back {
-    position: absolute;
-    top: 0;
-    left: 12px;
-    width: 34px;
-    height: 34px;
+    padding: 0 10px;
     cursor: pointer;
-    background: #111212;
   }
   &-title {
+    display: flex;
+    align-items: center;
     margin: 0 0 0 10px;
     color: $color-text;
-    &::after {
+    &::before {
       display: inline-block;
       content: '';
-      width: 34px;
-      height: 34px;
-      // background: url('./images/logo.png');
+      width: 26px;
+      height: 32px;
+      margin: 0 10px;
+      background: url('../../assets/imgs/logo.png') center / 100% no-repeat;
     }
   }
   &-datetime {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 1.8rem;
-    height: 34px;
-    &-middle {
-      line-height: 34px;
-    }
+    display: flex;
+    padding: 0 10px;
+    width: 140px;
+    justify-content: space-between;
   }
 }
 </style>

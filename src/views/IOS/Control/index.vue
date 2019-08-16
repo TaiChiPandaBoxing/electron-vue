@@ -1,6 +1,7 @@
 <template>
   <div>
     Control
+    <icon-svg icon-name="shield-user-line" @click.native="goto"/>
   </div>
 </template>
 
@@ -8,6 +9,12 @@
 export default {
   data () {
     return {
+    }
+  },
+  methods: {
+    goto () {
+      console.log(1111111)
+      this.$router.push('/test')
     }
   }
 }
