@@ -13,7 +13,6 @@ export default {
   },
   methods: {
     goto () {
-      console.log(1111111)
       this.$router.push('/test')
     }
   }

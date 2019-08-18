@@ -77,8 +77,8 @@ export default [
     }
   },
   {
-    path: '/sim-control',
-    name: 'sim-control',
+    path: '/control',
+    name: 'control',
     component: () => import(/* webpackChunkName: "sim-control" */ '../views/IOS/Control'),
     meta: {
       icon: 'computer-line',
@@ -89,6 +89,6 @@ export default [
   },
   {
     path: '/',
-    redirect: '/sim-control'
+    redirect: '/control'
   }
 ]

@@ -33,7 +33,11 @@ let indexDB = {
             autoIncrement: true
           })
           console.log('成功建立对象存储空间：' + DBInfo.instance.name)
-          resolve(e.target.result)
+          // const transaction = event.target.transaction
+          // transaction.oncomplete = function (e) {
+          //   // Now store is available to be populated
+          //   resolve(e.target.result)
+          // }
         }
       }
     })

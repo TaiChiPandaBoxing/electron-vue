@@ -17,15 +17,24 @@ export default {
     }
   },
   created () {
-    // this.$indexDB.addData([
-    //   {
-    //     id: 1,
-    //     username: 'root',
-    //     password: '123456'
-    //   }
-    // ], () => {
-    //   console.log('添加用户成功')
+    // localforage.setItem('key', 'value').then(() => {
+    //   return localforage.getItem('key')
+    // }).then((value) => {
+    //   console.log(value)
+    //   // we got our value
+    // }).catch((err) => {
+    //   console.log(err)
+    //   // we got an error
     // })
+    this.$indexDB.addData([
+      {
+        id: 1,
+        username: 'root',
+        password: '123456'
+      }
+    ], () => {
+      console.log('添加用户成功')
+    })
   },
   watch: {
     $route: {
