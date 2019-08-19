@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="main">
     Control
     <icon-svg icon-name="shield-user-line" @click.native="goto"/>
     <div>
@@ -11,7 +11,7 @@
       <input type="password" placeholder="Text input" @focus="show" data-layout="normal" />
     </div>
     <button>Login</button>
-    <vue-touch-keyboard :options="options" v-if="visible" :layout="layout" :cancel="hide" :accept="accept" :input="input" :next="next"/>
+    <vue-touch-keyboard :options="options" v-show="visible" :layout="layout" :cancel="hide" :accept="accept" :input="input" :next="next"/>
   </div>
 </template>
 
@@ -37,6 +37,7 @@ export default {
       this.hide()
     },
     show (e) {
+      console.log(11111111111111111111)
       this.input = e.target
       this.layout = e.target.dataset.layout
       if (!this.visible) this.visible = true
@@ -65,4 +66,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import '~@/assets/scss/variable';
+.main {
+  font-size: $font-size-medium;
+}
 </style>

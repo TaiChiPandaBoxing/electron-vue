@@ -17,6 +17,16 @@ export default {
     }
   },
   created () {
+    this.$socket.sendMsg({
+      action: 'loginReq',
+      action2: 'loginRsp',
+      params: {
+        user: 'root',
+        password: '123456'
+      }
+    }, (data) => {
+      console.log(data, 1)
+    })
     // localforage.setItem('key', 'value').then(() => {
     //   return localforage.getItem('key')
     // }).then((value) => {
@@ -35,15 +45,6 @@ export default {
     // ], () => {
     //   console.log('添加用户成功')
     // })
-    this.$socket.sendMsg({
-      action: 'loginReq',
-      params: {
-        user: 'root',
-        password: '123456'
-      }
-    }, (data) => {
-
-    })
   },
   watch: {
     $route: {
