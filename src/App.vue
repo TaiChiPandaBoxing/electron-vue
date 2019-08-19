@@ -26,14 +26,23 @@ export default {
     //   console.log(err)
     //   // we got an error
     // })
-    this.$indexDB.addData([
-      {
-        id: 1,
-        username: 'root',
+    // this.$indexDB.addData([
+    //   {
+    //     id: 1,
+    //     username: 'root',
+    //     password: '123456'
+    //   }
+    // ], () => {
+    //   console.log('添加用户成功')
+    // })
+    this.$socket.sendMsg({
+      action: 'loginReq',
+      params: {
+        user: 'root',
         password: '123456'
       }
-    ], () => {
-      console.log('添加用户成功')
+    }, (data) => {
+
     })
   },
   watch: {
