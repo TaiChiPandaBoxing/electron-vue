@@ -17,33 +17,15 @@ export default {
     }
   },
   created () {
-    this.$socket.sendMsg({
-      action: 'loginReq',
-      action2: 'loginRsp',
-      params: {
-        user: 'root',
-        password: '123456'
-      }
-    }, (data) => {
-      console.log(data, 1)
-    })
-    // localforage.setItem('key', 'value').then(() => {
-    //   return localforage.getItem('key')
-    // }).then((value) => {
-    //   console.log(value)
-    //   // we got our value
-    // }).catch((err) => {
-    //   console.log(err)
-    //   // we got an error
-    // })
-    // this.$indexDB.addData([
-    //   {
-    //     id: 1,
-    //     username: 'root',
+    // this.$socket.sendMsg({
+    //   action: 'loginReq',
+    //   action2: 'loginRsp',
+    //   params: {
+    //     user: 'root',
     //     password: '123456'
     //   }
-    // ], () => {
-    //   console.log('添加用户成功')
+    // }, (data) => {
+    //   console.log(data, 1)
     // })
   },
   watch: {

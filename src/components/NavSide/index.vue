@@ -37,7 +37,7 @@ export default {
 .navbar {
   display: flex;
   text-align: center;
-  font-size: $font-size-medium;
+  font-size: 0.3rem;
   &-nav {
     display: flex;
     width: 1.8rem;
