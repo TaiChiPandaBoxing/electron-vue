@@ -1,15 +1,20 @@
 <template>
   <div class="ios">
-    <nav-side :routes="routes" :index="index" @change="goto"/>
-    <router-view/>
+    <div class="ios-main">
+      <nav-side :routes="routes" :index="index" @change="goto"/>
+      <router-view/>
+    </div>
+    <footer-bottom/>
   </div>
 </template>
 
 <script type="text/ecmascript-6">
 import NavSide from 'components/NavSide'
+import FooterBottom from 'components/Footer'
 export default {
   components: {
-    NavSide
+    NavSide,
+    FooterBottom
   },
   data () {
     return {
@@ -34,5 +39,9 @@ export default {
 <style lang="scss" scoped>
 .ios {
   display: flex;
+  flex-direction: column;
+  &-main {
+    display: flex;
+  }
 }
 </style>
