@@ -44,6 +44,12 @@ module.exports = {
         mac: {
           icon: './public/app.icns'
         },
+        extraResources: [
+          {
+            from: './config/user.js',
+            to: './config/user.js'
+          }
+        ],
         productName: 'AppDemo'
       }
     }

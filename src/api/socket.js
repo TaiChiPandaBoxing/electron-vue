@@ -23,28 +23,35 @@ function WBT (config = {}) {
   // 自定义Ws连接函数：服务器连接成功
   this.onopen = (e) => {
     this.isHeartflag = true
-    console.log('open')
+    console.log('websocket connect success')
   }
   // 自定义Ws消息接收函数：服务器向前端推送消息时触发
   this.onmessage = (e) => {
     // 处理各种推送消息
     const message = JSON.parse(e.data)
-    const eventName = message.action2.replace('Rsp', '')
-    // 执行实时事件 可以添加type字段标识是否是实时通信，以便做不同的处理
-    // this.handleEvent(message)
-    // 执行回调
-    this.messageList[eventName](message)
+    // 添加type字段标识是否是实时通信，以便做不同的处理
+    if (message.type === 'RTC') {
+      // 执行实时事件
+      this.handleEvent(message)
+    } else if (message.type === 'HTTP') {
+      // 获取事件名称
+      const eventName = message.action.replace('Rsp', '')
+      // 执行回调
+      this.messageList[eventName](message)
+    } else {
+      console.log(message)
+    }
   }
   // 自定义Ws异常事件：Ws报错后触发
   this.onerror = (e) => {
-    console.log('error')
+    console.log('websocket connect error')
     this.isHeartflag = false
     this.reconnect()
   }
   // 自定义Ws关闭事件：Ws连接关闭后触发
   this.onclose = (e) => {
     this.reconnect()
-    console.log('close')
+    console.log('websocket connect close')
   }
   // 初始化websocket连接
   this.initWs()
@@ -52,10 +59,8 @@ function WBT (config = {}) {
 // 初始化websocket连接
 WBT.prototype.initWs = function () {
   window.WebSocket = window.WebSocket || window.MozWebSocket
-  if (!window.WebSocket) { // 检测浏览器支持
-    console.error('错误: 浏览器不支持websocket')
-    return
-  }
+  // 检测浏览器支持
+  if (!window.WebSocket) throw new Error('Error: Browsers do not support websocket')
   const self = this
   this.socket = new WebSocket(this.url) // 创建连接并注册响应函数
   this.socket.onopen = function (e) {
@@ -86,21 +91,14 @@ WBT.prototype.reconnect = function () {
 // 处理消息
 WBT.prototype.handleEvent = function (message) {
   const action = message.action
-  const retCode = message.params.retCode.id
-  // 根据action和retCode处理事件
-  // console.log(action,retCode)
-  if (this.handleAction[action][retCode]) this.handleAction[action][retCode]()
+  // 根据action处理事件
+  if (this.handleAction[action]) this.handleAction[action](message)
 }
 // 事务处理 根据action
 WBT.prototype.handleAction = {
-  // 登录反馈
-  'loginRsp': {
-    '0': function () {
-      console.log(0)
-    },
-    '3': function () {
-      console.log(3)
-    }
+  // 更新数据
+  'updateRsp': function (data) {
+    console.log(data.action)
   }
 }
 // 发送消息后回调

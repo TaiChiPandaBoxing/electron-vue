@@ -88,7 +88,7 @@ export default {
       width: 26px;
       height: 32px;
       margin: 0 10px;
-      background: url('../../assets/imgs/logo.png') center / 100% no-repeat;
+      background: url('../../assets/images/logo.png') center / 100% no-repeat;
     }
   }
   &-datetime {
