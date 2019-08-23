@@ -1,13 +1,19 @@
 <template>
   <div class="main">
-    Control
-    <icon-svg icon-name="shield-user-line" @click.native="goto"/>
+    <div class="monitor">
+      <div class="monitor-item">
+        <span class="circle" :class="{'is-success': success}"></span>
+        <label class="monitor-item-title">Control</label>
+      </div>
+    </div>
     <modal name="login" @before-close="visible=false">
       <div class="form-item">
+        <icon-svg icon-name="shield-user-line" @click.native="goto"/>
         <label class="form-item-label" for="username">User</label>
         <input class="form-item-input" ref="username" type="text" placeholder="User Name" @focus="show" data-layout="normal" />
       </div>
       <div class="form-item">
+        <icon-svg icon-name="shield-user-line" @click.native="goto"/>
         <label class="form-item-label" for="password">Password</label>
         <input class="form-item-input" ref="password" type="password" placeholder="Password" @focus="show" data-layout="normal" />
       </div>
@@ -25,6 +31,7 @@ export default {
   mixins: [keyboardMixin],
   data () {
     return {
+      success: true
     }
   },
   methods: {
@@ -97,6 +104,30 @@ export default {
 .main {
   font-size: $font-size-medium;
 }
+.monitor {
+  padding: 0 8px;
+  .circle {
+    margin: 0 8px;
+    width: 0.3rem;
+    height: 0.3rem;
+    border-radius: 100%;
+    background: radial-gradient(circle at 10px 10px, rgb(255, 0, 0), #000);
+    &.is-success {
+      background: radial-gradient(circle at 10px 10px, rgb(0, 255, 0), #000);
+    }
+  }
+  &-item {
+    display: flex;
+    align-items: center;
+    margin: 0.3rem 0.2rem;
+    font-size: $font-size-medium;
+    &-title {
+      width: 120px;
+      padding: 0 10px;
+      letter-spacing: 2px;
+    }
+  }
+}
 .form {
   &-item {
     display: flex;
@@ -117,7 +148,8 @@ export default {
     margin: 48px auto;
   }
 }
-.touch-keyboard {
+
+/deep/ .touch-keyboard {
   position: fixed;
   left: 0;
   right: 0;

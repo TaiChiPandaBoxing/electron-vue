@@ -1,6 +1,6 @@
 <template>
   <div class="header">
-    <div class="header-container">
+    <div class="header-container" @dblclick="toggleFullScreen">
       <div class="header-back">
         <icon-svg v-if="showBack" icon-name="arrow-left-s-line" @click.native="goBack"/>
       </div>
@@ -17,6 +17,7 @@
 
 <script type="text/ecmascript-6">
 import { PrefixZero } from '@/lib/utils.js'
+import { remote } from 'electron'
 export default {
   name: 'HeaderTop',
   props: {
@@ -55,6 +56,14 @@ export default {
       const { url } = this
       if (url.substr(0, 1) !== '/') console.error(`url格式不对,请检查url字符串第一个字符是否为"/"`)
       this.$router.push(this.url)
+    },
+    toggleFullScreen () {
+      const win = remote.getCurrentWindow()
+      if (win.isFullScreen()) {
+        win.setFullScreen(false)
+      } else {
+        win.setFullScreen(true)
+      }
     }
   }
 }
@@ -82,6 +91,7 @@ export default {
     align-items: center;
     margin: 0 0 0 10px;
     color: $color-text;
+    -webkit-app-region: drag;
     &::before {
       display: inline-block;
       content: '';
