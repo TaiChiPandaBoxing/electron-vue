@@ -2,8 +2,8 @@
   <nav class="navbar">
     <ul class="navbar-nav">
       <template v-for="route in routes">
-        <li class="nav-item" :key="route.name" @click.stop="switchRoute(route.name)">
-          <icon-svg :icon-name="index === route.name ? route.meta.iconActive : route.meta.icon"/>
+        <li class="nav-item" :key="route.name" @click="switchRoute(route.name)">
+          <icon-svg class="nav-item-icon" :icon-name="index === route.name ? route.meta.iconActive : route.meta.icon"/>
           <span class="nav-item-name">{{route.name}}</span>
         </li>
       </template>
@@ -38,6 +38,7 @@ export default {
   display: flex;
   text-align: center;
   font-size: 0.3rem;
+  background: $color-navside-background;
   &-nav {
     display: flex;
     width: 1.8rem;
@@ -51,11 +52,10 @@ export default {
     flex-direction: column;
     align-items: center;
     &-icon {
-      width: 100%;
-      height: 0.82rem;
+      padding: 0.10rem 0;
     }
     &-name {
-      padding: 10px 0;
+      padding: 0.04rem 0;
       font-size: 0.2rem;
     }
   }

@@ -37,11 +37,12 @@ function createWindow () {
     // Load the index.html when not in development
     win.loadURL('app://./index.html')
   }
+  
+  createMenu()
 
   win.on('closed', () => {
     win = null
   })
-  createMenu()
 }
 // 设置菜单栏
 function createMenu() {

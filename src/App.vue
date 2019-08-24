@@ -61,4 +61,9 @@ export default {
 
 <style lang="scss">
 @import "~@/assets/scss/index";
+#app {
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+}
 </style>

@@ -5,6 +5,22 @@
         <span class="circle" :class="{'is-success': success}"></span>
         <label class="monitor-item-title">Control</label>
       </div>
+      <div class="monitor-item">
+        <span class="circle" :class="{'is-success': success}"></span>
+        <label class="monitor-item-title">Control</label>
+      </div>
+      <div class="monitor-item">
+        <span class="circle" :class="{'is-success': success}"></span>
+        <label class="monitor-item-title">Control</label>
+      </div>
+      <div class="monitor-item">
+        <span class="circle" :class="{'is-success': success}"></span>
+        <label class="monitor-item-title">Control</label>
+      </div>
+      <div class="monitor-item">
+        <span class="circle" :class="{'is-success': success}"></span>
+        <label class="monitor-item-title">Control</label>
+      </div>
     </div>
     <modal name="login" @before-close="visible=false">
       <div class="form-item">

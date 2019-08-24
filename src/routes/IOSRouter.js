@@ -4,8 +4,8 @@ export default [
     name: 'aircraft',
     component: () => import(/* webpackChunkName: "aircraft" */ '../views/IOS/Position'),
     meta: {
-      icon: 'plane-line',
-      iconActive: 'plane-fill',
+      icon: 'air-freight-fill',
+      iconActive: 'air-freight-line',
       showBack: false,
       keepAlive: true
     }
@@ -15,8 +15,8 @@ export default [
     name: 'position',
     component: () => import(/* webpackChunkName: "position" */ '../views/IOS/Position'),
     meta: {
-      icon: 'pin-distance-line',
-      iconActive: 'pin-distance-fill',
+      icon: 'air-route-fill',
+      iconActive: 'air-route-line',
       showBack: false,
       keepAlive: true
     }
@@ -26,8 +26,8 @@ export default [
     name: 'environment',
     component: () => import(/* webpackChunkName: "environment" */ '../views/IOS/Position'),
     meta: {
-      icon: 'sun-cloudy-line',
-      iconActive: 'sun-cloudy-fill',
+      icon: 'air-cloud-fill',
+      iconActive: 'air-cloud-line',
       showBack: false,
       keepAlive: true
     }
@@ -37,8 +37,8 @@ export default [
     name: 'comms',
     component: () => import(/* webpackChunkName: "comms" */ '../views/IOS/Control'),
     meta: {
-      icon: 'broadcast-line',
-      iconActive: 'broadcast-fill',
+      icon: 'air-antenna-fill',
+      iconActive: 'air-antenna-line',
       showBack: false,
       keepAlive: true
     }
@@ -48,8 +48,8 @@ export default [
     name: 'failure',
     component: () => import(/* webpackChunkName: "failure" */ '../views/IOS/Failure'),
     meta: {
-      icon: 'spam-2-line',
-      iconActive: 'spam-2-fill',
+      icon: 'air-warning-fill',
+      iconActive: 'air-warning-line',
       showBack: false,
       keepAlive: true
     }
@@ -59,8 +59,8 @@ export default [
     name: 'map',
     component: () => import(/* webpackChunkName: "map" */ '../views/IOS/Failure'),
     meta: {
-      icon: 'route-line',
-      iconActive: 'route-fill',
+      icon: 'air-journey-fill',
+      iconActive: 'air-journey-line',
       showBack: false,
       keepAlive: true
     }
@@ -70,8 +70,8 @@ export default [
     name: 'freeze-reset',
     component: () => import(/* webpackChunkName: "freeze-reset" */ '../views/IOS/Control'),
     meta: {
-      icon: 'restart-line',
-      iconActive: 'restart-fill',
+      icon: 'air-reset-fill',
+      iconActive: 'air-reset-line',
       showBack: false,
       keepAlive: true
     }
@@ -81,8 +81,8 @@ export default [
     name: 'control',
     component: () => import(/* webpackChunkName: "sim-control" */ '../views/IOS/Control'),
     meta: {
-      icon: 'computer-line',
-      iconActive: 'computer-fill',
+      icon: 'air-adjust-fill',
+      iconActive: 'air-adjust-line',
       showBack: false,
       keepAlive: true
     }

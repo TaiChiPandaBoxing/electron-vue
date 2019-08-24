@@ -38,9 +38,11 @@ export default {
 
 <style lang="scss" scoped>
 .ios {
+  flex: 1;
   display: flex;
   flex-direction: column;
   &-main {
+    flex: 1;
     display: flex;
   }
 }
