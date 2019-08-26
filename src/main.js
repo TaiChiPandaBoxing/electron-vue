@@ -7,12 +7,14 @@ import router from './routes'
 import IconSvg from './icons'
 import VModal from 'vue-js-modal'
 import Tabs from './components/Tabs'
+import VButton from './components/Button'
 import VSelect from './components/Select'
 import localforage from './db/localforage'
+import ToggleButton from './components/Toggle'
 import VueTouchKeyboard from 'vue-touch-keyboard'
 import 'vue-touch-keyboard/dist/vue-touch-keyboard.css' // load default style
 
-Vue.use(IconSvg).use(VueTouchKeyboard).use(Tabs).use(VSelect).use(VModal, { dialog: true })
+Vue.use(IconSvg).use(VueTouchKeyboard).use(VButton).use(ToggleButton).use(Tabs).use(VSelect).use(VModal, { dialog: true })
 
 Vue.prototype.$socket = socket
 Vue.prototype.$localforage = localforage
