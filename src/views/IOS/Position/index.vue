@@ -1,6 +1,6 @@
 <template>
   <div>
-    Position
+    <v-select v-model="selected" :options="['Vue.js','React']"></v-select>
   </div>
 </template>
 
@@ -8,6 +8,7 @@
 export default {
   data () {
     return {
+      selected: ''
     }
   }
 }
