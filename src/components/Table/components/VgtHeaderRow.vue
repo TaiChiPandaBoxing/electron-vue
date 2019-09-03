@@ -71,7 +71,7 @@ export default {
       type: Number
     }
   },
-  data() {
+  data () {
     return {
     }
   },
@@ -79,7 +79,7 @@ export default {
   },
   methods: {
   },
-  mounted() {
+  mounted () {
   },
   components: {
   }
