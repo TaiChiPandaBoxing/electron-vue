@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <h1 onclick="wPrint()">title-1</h1>
+  <div>
+    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Necessitatibus, eius officiis? Totam repellendus ipsum nobis, eligendi iusto consectetur asperiores necessitatibus error vitae, sunt odit sit, voluptatibus ducimus dolore aut illum!
+    Illum animi ducimus alias dolores nulla omnis quo sapiente quae dicta, pariatur soluta. Praesentium, nam quo ea, deleniti, aliquid dolorum debitis porro aut qui cupiditate amet ullam voluptatum laboriosam doloremque.
+    Cumque cum officia, exercitationem qui voluptates laborum ipsum possimus repellendus vero voluptas, asperiores distinctio ab quam sit, ullam iure at obcaecati. Fugiat commodi eveniet itaque, ipsam earum assumenda accusamus repudiandae.
+    Repellat quam ab doloribus non, et vel deleniti quibusdam impedit eos explicabo atque architecto, sit possimus pariatur fugiat fugit quod inventore ipsam dolore magnam, expedita perspiciatis suscipit. Minima, beatae molestiae.
+    Iure asperiores quos itaque officiis maiores quas esse placeat facilis, delectus recusandae exercitationem quo, dolor quia ex quaerat praesentium fugit, totam harum obcaecati error? Voluptas temporibus at iure cum. Tempora!
+    Ipsa distinctio suscipit ea consequatur, ad assumenda quam amet vel nobis, repudiandae quis eos doloremque maxime odio sint quod! Delectus non consectetur rerum eveniet assumenda doloribus mollitia cupiditate qui vitae.
+    Cupiditate pariatur doloribus quibusdam consequuntur odit commodi architecto tenetur aliquid numquam? Minima obcaecati esse optio voluptatum at harum pariatur corporis quisquam reprehenderit nihil, magnam commodi, et hic dolor! Quasi, fugiat!
+    Ea assumenda laboriosam vero distinctio dignissimos, accusamus laudantium. Assumenda ipsum maiores laboriosam expedita. Aliquid facilis, maxime libero cupiditate itaque dolores quis praesentium, dolorem, esse sit rerum tenetur. A, ipsa vitae?
+    Soluta minus labore qui autem quaerat minima consectetur illo cumque, quasi natus iusto, provident laboriosam dolorum atque obcaecati. Consequuntur ex quidem nulla animi distinctio consequatur iste illo doloremque alias sint.
+    Doloribus voluptate ipsa praesentium necessitatibus, impedit quibusdam cupiditate eveniet perspiciatis sit quos ullam quaerat enim soluta minus non quisquam voluptatibus delectus officiis amet animi, corporis quia id aliquam. Soluta, placeat?
+  </div>
+  <div>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis eum reiciendis eius quaerat quae possimus repellat nihil sapiente beatae quam cumque quos iure iusto sit, tempore itaque dignissimos consequatur dolor.
+    Rerum, dolore eum modi vel ex consectetur temporibus optio itaque quae delectus deserunt repudiandae natus debitis odit veritatis assumenda tenetur quibusdam dicta quaerat aut earum! Suscipit sequi hic magni officiis.
+    Ab minus, distinctio vel esse, deserunt laborum molestiae odio explicabo suscipit deleniti repellendus. Quos neque suscipit aspernatur? Ullam odio, ipsam provident temporibus quo obcaecati nobis voluptas error corrupti quibusdam quas.
+    Obcaecati suscipit ad qui explicabo aliquid nostrum similique facere provident magnam vitae, repellat cupiditate fugit sit atque aliquam placeat voluptate dolore quos tempore. Laudantium, enim. Et, suscipit iste? Itaque, optio!
+    Eum aut qui tempore ea rerum perferendis natus veritatis totam, magni commodi. Totam, magnam mollitia dignissimos consequuntur harum tempore tempora odio! Officia molestiae cum ipsam! Suscipit perspiciatis quas quasi eum.
+  </div>
+</body>
+<script src="./main.js"></script>
+<script>
+  const { ipcRenderer } = require('electron')
+  ipcRenderer.on('ping', () => {
+    console.log('dom-ready susscess')
+  })
+  ipcRenderer.sendToHost('pong')
+</script>
+</html>

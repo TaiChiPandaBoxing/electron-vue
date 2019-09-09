@@ -23,6 +23,7 @@ function createWindow () {
     resizable: false,
     webPreferences: {
       webSecurity: false,
+      webviewTag: true,
       nodeIntegration: true
     },
     icon: `${__static}/app.ico`

@@ -1,5 +1,5 @@
 const path = require('path');
-
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 function resolve (dir) {
   return path.join(__dirname, dir);
 }
@@ -10,6 +10,16 @@ module.exports = {
     // can be overwritten by process.env.HOST
     host: '0.0.0.0',  
     port: 8080
+  },
+  configureWebpack: config => {
+    config.plugins.push(
+      new CopyWebpackPlugin([
+        {
+          from: './src/views/QTG/Template',
+          to: this.outputDir,
+        }
+      ])
+    )
   },
   chainWebpack: config => {
     config.resolve.alias

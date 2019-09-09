@@ -21,6 +21,7 @@
         <span class="circle" :class="{'is-success': success}"></span>
         <label class="monitor-item-title">Control</label>
       </div>
+      <icon-svg icon-name="shield-user-line" @click.native="goto"/>
     </div>
     <modal name="login" @before-close="visible=false">
       <div class="form-item">
@@ -52,7 +53,8 @@ export default {
   },
   methods: {
     goto () {
-      this.$modal.show('login')
+      this.$router.push('/entry')
+      // this.$modal.show('login')
     },
     login () {
       this.$localforage.getItem('user').then((data) => {

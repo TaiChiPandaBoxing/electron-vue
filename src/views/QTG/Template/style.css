@@ -1,0 +1,17 @@
+@media print {
+  @page {
+    @top-center {
+      content: 'header'
+    }
+  }
+  @page:first {
+    margin: 0;
+  }
+  div {
+    page-break-after: always;
+  }
+  h1 {
+    bookmark-level: 1;
+  }
+}
+
